@@ -1,1 +1,5 @@
-/TcpDemoServer/target/
+demo_tcp.p12
+TCPDemoClient/configuration.properties
+TCPDemoClient/configuration.properties
+TcpDemoServer/demo_tcp.p12
+TcpDemoServer/configuration.properties

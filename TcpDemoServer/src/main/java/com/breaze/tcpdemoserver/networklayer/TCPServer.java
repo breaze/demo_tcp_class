@@ -12,6 +12,8 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.net.ssl.SSLServerSocket;
+import javax.net.ssl.SSLServerSocketFactory;
 
 /**
  *
@@ -26,7 +28,8 @@ public class TCPServer {
     
     public void start(){
         try {
-            ServerSocket serverSocket = new ServerSocket(port);
+            SSLServerSocketFactory socketFactory = (SSLServerSocketFactory)SSLServerSocketFactory.getDefault();
+            SSLServerSocket serverSocket = (SSLServerSocket)socketFactory.createServerSocket(port);
             System.out.println("Server listing on port: "+port);
             while(true){
                 //Accept connection 
